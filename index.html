@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aayush Gupta</title>
+<meta name="description" content="Aayush Gupta, Edison High School Class of 2027. Research intern in molecular and cellular biology and Editor-in-Chief of The Eagle's Eye.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aayush Gupta">
+<meta property="og:description" content="Molecular and cellular biology research and student journalism. Edison High School, Class of 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2305080b'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%2362e2a0' stroke-width='3'/%3E%3Ccircle cx='14' cy='15' r='2.2' fill='%2393acff'/%3E%3Ccircle cx='18.5' cy='18.5' r='1.7' fill='%23ff7d76'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap">
+<style>
+/* Layout: a personal masthead above two rooms of work. The lab sits on a black microscope stage, the newsroom shows the paper's own site in a browser frame. Side by side on wide screens, stacked on phones. Tokens match the research page. */
+:root{
+  --paper:#fbfcfd; --paper-2:#f0f4f7; --card:#ffffff;
+  --ink:#132230; --ink-2:#465665; --ink-3:#62707d;
+  --rule:#d9e1e8; --rule-2:#c2ced8;
+  --accent:#0f7a4b;
+  --shadow:0 1px 2px rgba(19,34,48,.06), 0 14px 34px rgba(19,34,48,.09);
+  --stage:#05080b; --stage-2:#0e151b; --stage-rule:#26323d; --stage-ink:#e8eef3; --stage-ink-2:#a3b3c1;
+  --ch-emerin:#62e2a0; --ch-white:#f2f5f8;
+  --font-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --font-body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0b1117; --paper-2:#111a22; --card:#131d27;
+    --ink:#e5ebf0; --ink-2:#aab7c3; --ink-3:#8b98a5;
+    --rule:#22303d; --rule-2:#304150;
+    --accent:#4cc38a;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0b1117; --paper-2:#111a22; --card:#131d27;
+  --ink:#e5ebf0; --ink-2:#aab7c3; --ink-3:#8b98a5;
+  --rule:#22303d; --rule-2:#304150;
+  --accent:#4cc38a;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:1.0625rem; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+p, h1, h2, ul{margin:0}
+img{display:block; max-width:100%; height:auto}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.wrap{max-width:1184px; margin-inline:auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:720px){
+  .wrap{padding-left:max(32px, env(safe-area-inset-left, 0px)); padding-right:max(32px, env(safe-area-inset-right, 0px))}
+}
+.eyebrow{font-family:var(--font-mono); font-size:.75rem; font-weight:500; line-height:1.4; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+
+/* Intro */
+.intro{padding-block:clamp(56px, 9vw, 120px) clamp(36px, 5vw, 64px)}
+.intro-eyebrow{margin-bottom:18px}
+.intro h1{font-family:var(--font-display); font-weight:500; font-size:clamp(3rem, 1.5rem + 6.2vw, 6.4rem); line-height:.96; letter-spacing:-.022em; color:var(--ink); text-wrap:balance; font-optical-sizing:auto}
+.lede{margin-top:26px; max-width:38em; font-size:clamp(1.12rem, 1rem + .5vw, 1.38rem); line-height:1.55; color:var(--ink-2); text-wrap:pretty}
+
+/* Work cards */
+.work{padding-block:0 clamp(56px, 8vw, 104px)}
+.work-grid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:20px}
+.card{position:relative; display:grid; grid-template-rows:auto 1fr; min-width:0; overflow:hidden; border-radius:10px; transition:transform .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+.card:focus-within{box-shadow:var(--shadow)}
+.visual{height:300px; display:grid; place-items:center; padding:28px clamp(20px, 3vw, 32px) 8px}
+.card-body{display:flex; flex-direction:column; gap:12px; padding:22px clamp(20px, 3vw, 32px) 30px}
+.card-label{font-family:var(--font-mono); font-size:.72rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase}
+.card h2{font-family:var(--font-display); font-weight:500; font-size:clamp(1.4rem, 1.15rem + .8vw, 1.8rem); line-height:1.18; text-wrap:balance}
+.role{font-size:.92rem; font-weight:600; line-height:1.45}
+.role span{font-weight:400}
+.points{padding-left:1.1em; display:grid; gap:7px; font-size:.97rem; line-height:1.55; max-width:56ch}
+.points li::marker{font-size:.9em}
+.cta{display:inline-flex; align-self:flex-start; align-items:center; gap:8px; margin-top:auto; padding-top:10px; font-weight:600; text-decoration:none}
+.cta svg{transition:transform .2s ease}
+.card:hover .cta svg{transform:translateX(3px)}
+.cta::after{content:""; position:absolute; inset:0; border-radius:10px}
+.cta:focus-visible{outline:none}
+.cta:focus-visible::after{outline:2px solid var(--accent); outline-offset:3px}
+
+/* The lab */
+.card-lab{background:var(--stage); color:var(--stage-ink); border:1px solid var(--stage-rule)}
+.card-lab .card-label{color:var(--stage-ink-2)}
+.card-lab h2, .card-lab .role{color:var(--stage-ink)}
+.card-lab .role span, .card-lab .points{color:var(--stage-ink-2)}
+.card-lab .points li::marker{color:var(--ch-emerin)}
+.card-lab .cta{color:var(--ch-emerin)}
+.card-lab .cta:focus-visible::after{outline-color:var(--ch-emerin)}
+.ocular{position:relative; width:min(100%, 236px); aspect-ratio:1; border-radius:50%; overflow:hidden; background:var(--stage); box-shadow:0 0 0 8px var(--stage-2), 0 0 0 9px var(--stage-rule)}
+.ocular img{width:100%; height:100%; object-fit:cover; object-position:46% 50%}
+.reticle{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
+.r-line{fill:none; stroke:var(--ch-white); stroke-opacity:.26; stroke-width:1; vector-effect:non-scaling-stroke}
+
+/* The newsroom */
+.card-news{background:var(--card); color:var(--ink); border:1px solid var(--rule)}
+.card-news .card-label{color:var(--ink-3)}
+.card-news .role span, .card-news .points{color:var(--ink-2)}
+.card-news .points li::marker{color:var(--accent)}
+.card-news .cta{color:var(--accent)}
+.browser{width:min(100%, 440px); overflow:hidden; border-radius:8px; background:var(--card); border:1px solid var(--rule-2); box-shadow:var(--shadow)}
+.browser-bar{display:flex; align-items:center; gap:6px; padding:8px 10px; background:var(--paper-2); border-bottom:1px solid var(--rule)}
+.browser-bar i{width:8px; height:8px; flex:none; border-radius:50%; background:var(--rule-2)}
+.browser-bar span{flex:1; min-width:0; margin-left:6px; padding:2px 10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border-radius:999px; border:1px solid var(--rule); background:var(--card); font-family:var(--font-mono); font-size:.68rem; color:var(--ink-3)}
+.browser img{width:100%; height:auto}
+.card-news .about{font-size:.98rem; line-height:1.6; color:var(--ink-2); max-width:62ch}
+
+/* Protocols: the four first pages fanned out, then one row per PDF */
+.fan{position:relative; width:min(100%, 400px); aspect-ratio:400 / 262}
+.fan img{position:absolute; width:32%; height:auto; border:1px solid var(--rule-2); border-radius:3px; box-shadow:var(--shadow)}
+.fan img:nth-child(1){left:1%; top:13%; transform:rotate(-8deg)}
+.fan img:nth-child(2){left:23%; top:3%; transform:rotate(-3deg)}
+.fan img:nth-child(3){left:45%; top:3%; transform:rotate(3deg)}
+.fan img:nth-child(4){left:67%; top:13%; transform:rotate(8deg)}
+.card-news .summary{font-size:.98rem; line-height:1.6; color:var(--ink-2); max-width:58ch}
+.docs{list-style:none; padding:0; display:grid; gap:8px}
+.docs a{position:relative; z-index:1; display:flex; align-items:center; gap:12px; padding:8px 14px 8px 8px; border:1px solid var(--rule); border-radius:8px; background:var(--paper); color:var(--ink); text-decoration:none; transition:border-color .15s}
+.docs a:hover{border-color:var(--accent)}
+.docs img{width:34px; height:44px; flex:none; object-fit:cover; object-position:top; border:1px solid var(--rule); border-radius:2px}
+.docs span{display:grid; flex:1; min-width:0}
+.docs b{font-size:.95rem; font-weight:600; line-height:1.3}
+.docs small{font-family:var(--font-mono); font-size:.72rem; color:var(--ink-3)}
+.docs svg{flex:none; color:var(--accent)}
+
+@media (max-width:860px){
+  .work-grid{grid-template-columns:1fr}
+  .visual{height:auto; padding-top:32px; padding-bottom:12px}
+}
+
+/* Footer */
+.foot{border-top:1px solid var(--rule); padding-block:26px 36px; font-size:.88rem; color:var(--ink-3)}
+.foot-inner{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 32px}
+
+@media (prefers-reduced-motion: reduce){
+  .card, .cta svg{transition:none}
+  .card:hover{transform:none}
+  .card:hover .cta svg{transform:none}
+}
+</style>
+<link rel="stylesheet" href="browser.css">
+</head>
+<body>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow intro-eyebrow">Edison High School · Class of 2027</p>
+      <h1>Aayush Gupta</h1>
+      <p class="lede">Senior at Edison High School preparing for a career in medicine, with research experience in molecular and cellular biology at Rowan University and Rutgers New Jersey Medical School. Editor-in-Chief of The Eagle's Eye, Edison High School's award-winning student newspaper.</p>
+    </div>
+  </section>
+
+  <section class="work" aria-label="Selected work">
+    <div class="wrap work-grid">
+
+      <article class="card card-lab">
+        <div class="visual">
+          <div class="ocular">
+            <img src="hero-merge.jpg" width="536" height="464" alt="Three cell nuclei under a fluorescence microscope, with a bright green ring of emerin outlining the center nucleus.">
+            <svg class="reticle" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <circle cx="50" cy="50" r="47.5" class="r-line"/>
+            <line x1="6" y1="50" x2="94" y2="50" class="r-line"/>
+            <line x1="50" y1="6" x2="50" y2="94" class="r-line"/>
+            <line x1="10" y1="48.0" x2="10" y2="52.0" class="r-line"/><line x1="14" y1="49.0" x2="14" y2="51.0" class="r-line"/><line x1="18" y1="49.0" x2="18" y2="51.0" class="r-line"/><line x1="22" y1="49.0" x2="22" y2="51.0" class="r-line"/><line x1="26" y1="49.0" x2="26" y2="51.0" class="r-line"/><line x1="30" y1="48.0" x2="30" y2="52.0" class="r-line"/><line x1="34" y1="49.0" x2="34" y2="51.0" class="r-line"/><line x1="38" y1="49.0" x2="38" y2="51.0" class="r-line"/><line x1="42" y1="49.0" x2="42" y2="51.0" class="r-line"/><line x1="46" y1="49.0" x2="46" y2="51.0" class="r-line"/><line x1="54" y1="49.0" x2="54" y2="51.0" class="r-line"/><line x1="58" y1="49.0" x2="58" y2="51.0" class="r-line"/><line x1="62" y1="49.0" x2="62" y2="51.0" class="r-line"/><line x1="66" y1="49.0" x2="66" y2="51.0" class="r-line"/><line x1="70" y1="48.0" x2="70" y2="52.0" class="r-line"/><line x1="74" y1="49.0" x2="74" y2="51.0" class="r-line"/><line x1="78" y1="49.0" x2="78" y2="51.0" class="r-line"/><line x1="82" y1="49.0" x2="82" y2="51.0" class="r-line"/><line x1="86" y1="49.0" x2="86" y2="51.0" class="r-line"/><line x1="90" y1="48.0" x2="90" y2="52.0" class="r-line"/><line x1="49" y1="14" x2="51" y2="14" class="r-line"/><line x1="49" y1="22" x2="51" y2="22" class="r-line"/><line x1="49" y1="30" x2="51" y2="30" class="r-line"/><line x1="49" y1="38" x2="51" y2="38" class="r-line"/><line x1="49" y1="46" x2="51" y2="46" class="r-line"/><line x1="49" y1="54" x2="51" y2="54" class="r-line"/><line x1="49" y1="62" x2="51" y2="62" class="r-line"/><line x1="49" y1="70" x2="51" y2="70" class="r-line"/><line x1="49" y1="78" x2="51" y2="78" class="r-line"/><line x1="49" y1="86" x2="51" y2="86" class="r-line"/>
+          </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-label">Research · Molecular and cellular biology</p>
+          <h2>Interactions of Emerin with Histone-Modifying Enzymes in Nuclear Envelope-Mediated Repression</h2>
+          <p class="role">Research Intern, RISER Program, Rowan University <span>· June–August 2026</span></p>
+          <ul class="points">
+            <li>Selected as one of about 16 students from roughly 400 applicants.</li>
+            <li>Investigated nuclear envelope protein interactions linked to Emery–Dreifuss muscular dystrophy under Dr. James Holaska and Ph.D. researcher Richard Condon, using immunofluorescence, STED super-resolution microscopy and co-immunoprecipitation in HeLa and C2C12 cells.</li>
+            <li>Selected to present at the Tri-Institutional Chemical Biology Symposium, Rockefeller University (oral and poster, September 2026).</li>
+          </ul>
+          <a class="cta" href="research.html">Explore the research
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8 H13 M9 4 L13 8 L9 12"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card card-news">
+        <div class="visual">
+          <div class="fan" aria-hidden="true">
+            <img src="protocol-subculture.jpg" width="800" height="1035" alt="">
+            <img src="protocol-immunofluorescence.jpg" width="800" height="1035" alt="">
+            <img src="protocol-immunoprecipitation.jpg" width="800" height="1035" alt="">
+            <img src="protocol-western-blotting.jpg" width="800" height="1035" alt="">
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-label">Lab methods · Holaska Lab</p>
+          <h2>Laboratory Protocols</h2>
+          <p class="summary">Step-by-step protocols I prepared in the Holaska Lab for the four techniques behind my research. Each includes background on the method, safety notes, materials and a full procedure.</p>
+          <ul class="docs">
+            <li><a href="Adherent-Cell-Subculture-Protocol.pdf" target="_blank" rel="noopener"><img src="protocol-subculture.jpg" width="800" height="1035" alt=""><span><b>Adherent Mammalian Cell Subculture</b><small>PDF · 4 pages</small></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 11 L11 5 M6 5 H11 V10"/></svg></a></li>
+            <li><a href="Indirect-Immunofluorescence-Protocol.pdf" target="_blank" rel="noopener"><img src="protocol-immunofluorescence.jpg" width="800" height="1035" alt=""><span><b>Indirect Immunofluorescence</b><small>PDF · 3 pages</small></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 11 L11 5 M6 5 H11 V10"/></svg></a></li>
+            <li><a href="Immunoprecipitation-Protocol.pdf" target="_blank" rel="noopener"><img src="protocol-immunoprecipitation.jpg" width="800" height="1035" alt=""><span><b>Immunoprecipitation</b><small>PDF · 8 pages</small></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 11 L11 5 M6 5 H11 V10"/></svg></a></li>
+            <li><a href="Western-Blotting-Protocol.pdf" target="_blank" rel="noopener"><img src="protocol-western-blotting.jpg" width="800" height="1035" alt=""><span><b>Western Blotting</b><small>PDF · 8 pages</small></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 11 L11 5 M6 5 H11 V10"/></svg></a></li>
+          </ul>
+          <a class="cta" href="protocols.html">View all protocols
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8 H13 M9 4 L13 8 L9 12"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card card-news">
+        <div class="visual">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>ehseagleseye.com</span></div>
+            <img src="eagles-eye.jpg" width="880" height="428" alt="The Eagle's Eye website, Edison High School's student newspaper.">
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-label">Journalism</p>
+          <h2>Editor-in-Chief, The Eagle's Eye</h2>
+          <p class="role">Edison High School <span>· Staff Writer 2023–24 · News Editor 2024–26 · Editor-in-Chief 2026–27</span></p>
+          <ul class="points">
+            <li>Direct and final-edit all content for the 90+ member student newspaper, and lead weekly editorial board meetings.</li>
+            <li>Introduced new coverage sections, digital strategy and editorial guidelines. Articles have drawn more than 12,000 views.</li>
+            <li>GSSPA NJ All-Star Journalism Team (1 of 12 selected) with a U.S. Congressional Commendation, and invited presenter at the GSSPA Annual Conference at Rutgers University.</li>
+          </ul>
+          <a class="cta" href="https://ehseagleseye.com/staff_name/aayush-gupta-27/" target="_blank" rel="noopener">View my articles
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 11 L11 5 M6 5 H11 V10"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card card-news">
+        <div class="visual">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>linkedin.com/in/aayush-gupta-b69a85362</span></div>
+            <img src="linkedin.jpg" width="880" height="453" alt="Aayush Gupta's LinkedIn profile: Medical Researcher at Rutgers New Jersey Medical School, Edison, New Jersey.">
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-label">LinkedIn</p>
+          <h2>Medical Researcher at Rutgers New Jersey Medical School</h2>
+          <p class="role">Edison, New Jersey <span>· 500+ connections</span></p>
+          <p class="about">My name is Aayush Gupta, and I am an aspiring medical student, pursuing a specialized track degree in Molecular Biology and Biochemistry (MBB) while minoring in Biomechanics. I am an aspiring professional within the medicinal industry, completing EMT certification within the state of New Jersey, as I am motivated by problem-solving and leadership skills.</p>
+          <a class="cta" href="https://www.linkedin.com/in/aayush-gupta-b69a85362/" target="_blank" rel="noopener">View my LinkedIn profile
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 11 L11 5 M6 5 H11 V10"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <p>Aayush Gupta · Edison High School, Class of 2027</p>
+    <div class="wb-foot">
+      <p>Microscopy images are original research data.</p>
+      <button type="button" class="wb-launch" data-wb-open aria-label="Search the web" title="Search the web" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.25"/><path d="M1.75 8h12.5M8 1.75c1.7 1.7 2.55 3.8 2.55 6.25S9.7 12.55 8 14.25M8 1.75C6.3 3.45 5.45 5.55 5.45 8s.85 4.55 2.55 6.25"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<script src="browser.js" defer></script>
+</body>
+</html>

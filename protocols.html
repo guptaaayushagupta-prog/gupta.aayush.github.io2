@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratory Protocols | Aayush Gupta</title>
+<meta name="description" content="Step-by-step laboratory protocols prepared by Aayush Gupta in the Holaska Lab: cell culture, indirect immunofluorescence, immunoprecipitation and western blotting.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Laboratory Protocols | Aayush Gupta">
+<meta property="og:description" content="Cell culture, immunofluorescence, immunoprecipitation and western blotting protocols from the Holaska Lab.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2305080b'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%2362e2a0' stroke-width='3'/%3E%3Ccircle cx='14' cy='15' r='2.2' fill='%2393acff'/%3E%3Ccircle cx='18.5' cy='18.5' r='1.7' fill='%23ff7d76'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap">
+<style>
+/* Layout: a document shelf. Each protocol is a sheet whose real first page shows at the top, with what it covers and how to open it below. Tokens match the home and research pages. */
+:root{
+  --paper:#fbfcfd; --paper-2:#f0f4f7; --card:#ffffff;
+  --ink:#132230; --ink-2:#465665; --ink-3:#62707d;
+  --rule:#d9e1e8; --rule-2:#c2ced8;
+  --accent:#0f7a4b; --accent-ink:#ffffff;
+  --shadow:0 1px 2px rgba(19,34,48,.06), 0 14px 34px rgba(19,34,48,.09);
+  --font-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --font-body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0b1117; --paper-2:#111a22; --card:#131d27;
+    --ink:#e5ebf0; --ink-2:#aab7c3; --ink-3:#8b98a5;
+    --rule:#22303d; --rule-2:#304150;
+    --accent:#4cc38a; --accent-ink:#06150d;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0b1117; --paper-2:#111a22; --card:#131d27;
+  --ink:#e5ebf0; --ink-2:#aab7c3; --ink-3:#8b98a5;
+  --rule:#22303d; --rule-2:#304150;
+  --accent:#4cc38a; --accent-ink:#06150d;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:1.0625rem; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+p, h1, h2{margin:0}
+img{display:block; max-width:100%; height:auto}
+a{color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+.wrap{max-width:1184px; margin-inline:auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:720px){
+  .wrap{padding-left:max(32px, env(safe-area-inset-left, 0px)); padding-right:max(32px, env(safe-area-inset-right, 0px))}
+}
+.eyebrow{font-family:var(--font-mono); font-size:.75rem; font-weight:500; line-height:1.4; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+
+/* Header */
+.site-header{border-bottom:1px solid var(--rule)}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:60px}
+.brand{display:flex; align-items:baseline; gap:10px; color:var(--ink); text-decoration:none; min-width:0}
+.brand-name{font-family:var(--font-display); font-size:1.25rem; font-weight:500; white-space:nowrap}
+.brand-sub{font-family:var(--font-mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+.site-nav{display:flex; gap:2px}
+.site-nav a{font-size:.9rem; color:var(--ink-2); text-decoration:none; padding:8px 10px; border-radius:6px}
+.site-nav a:hover{color:var(--ink); background:var(--paper-2)}
+@media (max-width:480px){ .brand-sub{display:none} }
+
+/* Intro */
+.hero{padding-block:clamp(44px, 7vw, 88px) clamp(28px, 4vw, 48px)}
+.hero h1{margin-top:14px; font-family:var(--font-display); font-weight:500; font-size:clamp(2.5rem, 1.4rem + 3.8vw, 4.4rem); line-height:1.02; letter-spacing:-.015em; text-wrap:balance}
+.lede{margin-top:20px; max-width:40em; font-size:clamp(1.08rem, 1rem + .4vw, 1.25rem); line-height:1.55; color:var(--ink-2); text-wrap:pretty}
+.hint{margin-top:12px; font-size:.95rem; color:var(--ink-3)}
+
+/* Protocol sheets */
+.protocols{padding-block:0 clamp(56px, 8vw, 96px)}
+.proto-grid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px}
+.proto{display:flex; flex-direction:column; min-width:0; overflow:hidden; border:1px solid var(--rule); border-radius:10px; background:var(--card)}
+.preview{display:block; aspect-ratio:16 / 10; overflow:hidden; border-bottom:1px solid var(--rule)}
+.preview img{width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .3s ease}
+.preview:hover img{transform:scale(1.02)}
+.proto-body{display:flex; flex-direction:column; gap:10px; flex:1; padding:22px clamp(20px, 3vw, 28px) 26px}
+.proto h2{font-family:var(--font-display); font-weight:500; font-size:clamp(1.3rem, 1.1rem + .6vw, 1.6rem); line-height:1.2; text-wrap:balance}
+.meta{font-family:var(--font-mono); font-size:.74rem; letter-spacing:.04em; color:var(--ink-3)}
+.desc{font-size:.98rem; line-height:1.6; color:var(--ink-2); max-width:60ch}
+.actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:auto; padding-top:10px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font-size:.94rem; font-weight:500; text-decoration:none; border:1px solid transparent; transition:background-color .15s, color .15s, border-color .15s}
+.btn-primary{background:var(--ink); color:var(--paper)}
+.btn-primary:hover{background:var(--accent); color:var(--accent-ink)}
+.btn-ghost{color:var(--ink); border-color:var(--rule-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+@media (max-width:760px){ .proto-grid{grid-template-columns:1fr} }
+
+/* Footer */
+.foot{border-top:1px solid var(--rule); padding-block:26px 36px; font-size:.88rem; color:var(--ink-3)}
+.foot-inner{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 32px}
+
+@media (prefers-reduced-motion: reduce){
+  .preview img, .btn{transition:none}
+  .preview:hover img{transform:none}
+}
+</style>
+<link rel="stylesheet" href="browser.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-name">Aayush Gupta</span><span class="brand-sub">Protocols</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Holaska Lab · Rowan-Virtua School of Translational Biomedical Engineering and Sciences</p>
+      <h1>Laboratory Protocols</h1>
+      <p class="lede">Step-by-step protocols I prepared in the Holaska Lab for the techniques used in my research on emerin and nuclear envelope-mediated gene repression. Each protocol includes background on the method, safety and hazard notes, equipment and reagent lists, and a detailed procedure.</p>
+      <p class="hint">Select a protocol to open the full PDF.</p>
+    </div>
+  </section>
+
+  <section class="protocols" aria-label="Protocols">
+    <div class="wrap proto-grid">
+
+      <article class="proto">
+        <a class="preview" href="Adherent-Cell-Subculture-Protocol.pdf" target="_blank" rel="noopener" aria-label="Open the Adherent Mammalian Cell Subculture Protocol (PDF)"><img src="protocol-subculture.jpg" width="800" height="1035" alt="First page of the Adherent Mammalian Cell Subculture Protocol."></a>
+        <div class="proto-body">
+          <p class="eyebrow">Cell culture</p>
+          <h2>Adherent Mammalian Cell Subculture Protocol</h2>
+          <p class="meta">PDF · 4 pages · 2.6 MB</p>
+          <p class="desc">How to maintain and passage adherent mammalian cell lines, such as the HeLa and C2C12 cells used in this research: detaching cells with trypsin, counting them and reseeding them at a set density. Includes a reference table of seeding densities and volumes for common culture vessels.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="Adherent-Cell-Subculture-Protocol.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="Adherent-Cell-Subculture-Protocol.pdf" download>Download</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proto">
+        <a class="preview" href="Indirect-Immunofluorescence-Protocol.pdf" target="_blank" rel="noopener" aria-label="Open the Indirect Immunofluorescence Protocol (PDF)"><img src="protocol-immunofluorescence.jpg" width="800" height="1035" alt="First page of the Indirect Immunofluorescence Protocol."></a>
+        <div class="proto-body">
+          <p class="eyebrow">Imaging</p>
+          <h2>Indirect Immunofluorescence Protocol</h2>
+          <p class="meta">PDF · 3 pages · 1.9 MB</p>
+          <p class="desc">How to label proteins in fixed cells with a primary antibody and a fluorophore-conjugated secondary antibody, showing where proteins are located and whether two proteins co-localize. This is the method behind the microscopy images in this research.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="Indirect-Immunofluorescence-Protocol.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="Indirect-Immunofluorescence-Protocol.pdf" download>Download</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proto">
+        <a class="preview" href="Immunoprecipitation-Protocol.pdf" target="_blank" rel="noopener" aria-label="Open the Immunoprecipitation Protocol (PDF)"><img src="protocol-immunoprecipitation.jpg" width="800" height="1035" alt="First page of the Immunoprecipitation Protocol."></a>
+        <div class="proto-body">
+          <p class="eyebrow">Protein isolation</p>
+          <h2>Immunoprecipitation Protocol</h2>
+          <p class="meta">PDF · 8 pages · 3.6 MB</p>
+          <p class="desc">How to isolate a target protein from a cell lysate using an antibody bound to Protein G magnetic beads, capturing any proteins attached to it for detection by western blot. Includes handwritten bench notes for HeLa and C2C12 cells.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="Immunoprecipitation-Protocol.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="Immunoprecipitation-Protocol.pdf" download>Download</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proto">
+        <a class="preview" href="Western-Blotting-Protocol.pdf" target="_blank" rel="noopener" aria-label="Open the Western Blotting Protocol (PDF)"><img src="protocol-western-blotting.jpg" width="800" height="1035" alt="First page of the Western Blotting Protocol."></a>
+        <div class="proto-body">
+          <p class="eyebrow">Protein detection</p>
+          <h2>Western Blotting Protocol</h2>
+          <p class="meta">PDF · 8 pages · 4.1 MB</p>
+          <p class="desc">How to separate proteins by size on polyacrylamide gels, transfer them to a membrane and detect specific proteins with primary and HRP-conjugated secondary antibodies. Covers sample preparation, gel casting and band quantification.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="Western-Blotting-Protocol.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="Western-Blotting-Protocol.pdf" download>Download</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <p>Aayush Gupta · Edison High School, Class of 2027</p>
+    <div class="wb-foot">
+      <p><a href="index.html">Back to home</a></p>
+      <button type="button" class="wb-launch" data-wb-open aria-label="Search the web" title="Search the web" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.25"/><path d="M1.75 8h12.5M8 1.75c1.7 1.7 2.55 3.8 2.55 6.25S9.7 12.55 8 14.25M8 1.75C6.3 3.45 5.45 5.55 5.45 8s.85 4.55 2.55 6.25"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<script src="browser.js" defer></script>
+</body>
+</html>
